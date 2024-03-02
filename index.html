@@ -7,8 +7,92 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/d6b9f7048d.js" crossorigin="anonymous"></script>
 </head>
 <body class="mulish-font">
-    <h1 class="text-5xl">hello world</h1>
+    <header class="container mx-auto lg:px-28">
+        <div class="navbar py-8">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  ">
+                    <i class="fa-solid fa-house my-2 "></i>
+                    <i class="fa-solid fa-pen my-2"></i>
+                    <i class="fa-solid fa-user-plus my-2"></i>
+                    <i class="fa-solid fa-flag my-2"></i>
+                </ul>
+              </div>
+              <a class="btn btn-ghost text-3xl font-extrabold">MemoryLane</a>
+            </div>
+            <div class="navbar-end gap-6">
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1  gap-4">
+                        <a href=""><i class="fa-solid fa-house rounded-full border-2 p-2 text-2xl "></i></a>
+                        <a href=""><i class="fa-solid fa-pen rounded-full border-2 p-2 text-2xl"></i></a>
+                        <a href=""><i class="fa-solid fa-user-plus rounded-full border-2 p-2 text-2xl"></i></a>
+                        <a href=""><i class="fa-solid fa-flag rounded-full border-2 p-2 text-2xl "></i></a>
+                    </ul>
+                  </div>
+
+              <button class="text-xl rounded-3xl py-3 px-8 bg-[#797DFC] text-white">Sign In</button>
+            </div>
+          </div>
+    </header>
+
+    <!-- main section  -->
+    <main class="container mx-auto lg:px-28">
+        <!-- banner section  -->
+       <section>
+        <div class="hero " >
+            
+            <div class="hero-content flex-col lg:flex-row bg-[#12132D] h-[550px] bg-no-repeat bg-bottom rounded-3xl "  style="background-image: url('./images/bgbanner.png')">
+    
+                <div class="lg:w-[50%]">
+                 <h1 class="text-4xl lg:text-6xl font-extrabold text-white ">Welcome to the <span class="text-[rgb(111,114,231)]">MemoryLane</span> Lounge</h1>
+                <p class="py-6 text-gray-300">Share your favorite opinion and win and wp forum coffee mug!</p>
+                <div class=" flex  relative mt-8    ">
+                    
+                    <input class="input input-bordered w-full lg:w-[70%]  border-none py-8 rounded-full "  type="text" placeholder="Search here anything">
+                    <button  class="btn absolute right-4 lg:right-48 top-2 bg-[#797dfc] text-white px-8 rounded-full  ">Search</button>
+                </div>
+                </div>
+                <div class="bg-white lg:w-[370px] h-[290px] rounded-3xl p-10">
+                    <div class="gap-y-10 flex justify-between gap-4 ">
+                        <div >
+                        <h1 class="text-2xl font-medium my-2">Registered Users</h1>
+                        <h1 class="text-2xl font-medium ">Forum</h1>
+                        <h1 class="text-2xl font-medium my-2">Topics</h1>
+                        <h1 class="text-2xl font-medium">Replies</h1>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl my-2">01</h1>
+                            <h1 class="text-2xl">01</h1>
+                            <h1 class="text-2xl my-2">01</h1>
+                            <h1 class="text-2xl">01</h1>
+                        </div>
+                    </div>
+
+                </div>
+
+              </div>
+              
+            </div>
+       </section>
+
+       <!-- let's start section  -->
+       <section class="mt-14 mb-[500px] ">
+         <h1 class="text-center text-4xl  font-extrabold">Let’s Discuss</h1>
+         <p class=" text-center  lg:px-80 mt-8">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+         <div class=" mt-10 flex flex-col-reverse lg:flex-row">
+
+            <div class="w-[780px] h-[270px] bg-[rgb(241,242,255)]">
+
+            </div>
+         </div>
+       </section>
+          
+    </main>
 </body>
 </html>
