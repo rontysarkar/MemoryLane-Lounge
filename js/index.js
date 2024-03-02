@@ -1,22 +1,31 @@
 const cardContainer =document.getElementById('card-container')
 const latestContainer =document.getElementById('latest-container')
 const markContainer =document.getElementById('mark-container')
+const markCountContainer =document.getElementById('mark-count-container')
+const inputField =document.getElementById('input-field')
+const inputBtn =document.getElementById('input-btn')
 
+let markCount = 0;
 
 
 
 let isActive = ''
 
-const allPostCategory = async () =>{
-    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
+const allPostCategory = async (category) =>{
+    const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`)
     const data = await response.json()
     const cardInfo = data.posts;
     allCardCategory(cardInfo);
     
+    
 }
 
 
+
+
 const allCardCategory =(card) =>{
+
+    cardContainer.textContent = ' ';
    
     card.forEach((info) =>{
         // console.log(info)
@@ -30,7 +39,7 @@ const allCardCategory =(card) =>{
         }
 
         
-
+        ;
         const div = document.createElement('div');
         div.classList = `lg:w-[780px] lg:h-[270px] rounded-xl bg-[#f3f3f5] p-2 lg:p-10 flex gap-6 mb-8 relative`
         div.innerHTML = `
@@ -63,7 +72,7 @@ const allCardCategory =(card) =>{
                     <span>min</span>
                 </div>
             </div>
-            <img onclick="markBtn('${info.view_count},${info.title}')" class =" absolute right-6 bottom-6" src="images/email 1.png" alt="">
+            <img onclick="markBtn('${info.view_count},${info.title}')" class =" lg:absolute right-6 bottom-6" src="images/email 1.png" alt="">
         </div>
 
     </div>
@@ -79,6 +88,8 @@ const allCardCategory =(card) =>{
 
 
 function markBtn(data){
+    markCount++;
+    markCountContainer.innerText = markCount;
  
     const [views,title] = data.split(",");
 
@@ -95,6 +106,15 @@ function markBtn(data){
     `
     markContainer.appendChild(div)
 }
+
+
+
+inputBtn.addEventListener('click', async () =>{
+    const category = inputField.value
+    console.log(category)
+    allPostCategory(category);
+    
+})
 
 
 
@@ -153,7 +173,7 @@ const latestPosts = async () =>{
 
 
 
-allPostCategory()
+allPostCategory('')
 latestPosts();
 
 
