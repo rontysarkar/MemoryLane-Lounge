@@ -4,6 +4,7 @@ const markContainer =document.getElementById('mark-container')
 const markCountContainer =document.getElementById('mark-count-container')
 const inputField =document.getElementById('input-field')
 const inputBtn =document.getElementById('input-btn')
+const loadingSpinner =document.getElementById('loading-spinner')
 
 let markCount = 0;
 
@@ -36,10 +37,10 @@ const allCardCategory =(card) =>{
             
         }else{
             isActive = 'bg-red-600'
-        }
+        };
 
-        
-        ;
+       
+        loadingSpinner.classList.add('hidden')
         const div = document.createElement('div');
         div.classList = `lg:w-[780px] lg:h-[270px] rounded-xl bg-[#f3f3f5] p-2 lg:p-10 flex gap-6 mb-8 relative`
         div.innerHTML = `
@@ -77,6 +78,7 @@ const allCardCategory =(card) =>{
 
     </div>
         `
+       
         cardContainer.appendChild(div)
 
 
@@ -104,15 +106,19 @@ function markBtn(data){
                         <h1 class="text-xl">${views}</h1>
                     </div>
     `
+
     markContainer.appendChild(div)
 }
 
 
 
 inputBtn.addEventListener('click', async () =>{
+    loadingSpinner.classList.remove('hidden')
     const category = inputField.value
     console.log(category)
-    allPostCategory(category);
+    setTimeout( () =>{
+        allPostCategory(category);
+    },2000)
     
 })
 
