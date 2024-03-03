@@ -186,25 +186,6 @@ latestPosts();
 
 
 
-// const markBtn = async (id) =>{
-//     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
-//     const data = await res.json();
-//     const posts = data.posts;
-//     // console.log(posts)
-//     for(let post of posts){
-//         console.log(post.)
-//     }
-    
-
-// }
-
-// const cardInfo = (cardInfo) =>{
-//     console.log(cardInfo)
-//     cardInfo.forEach((info) =>{
-//         console.log(info)
-
-//     })
-// }
 
 
 
